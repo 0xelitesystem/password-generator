@@ -31,6 +31,10 @@ Because the words are chosen uniformly and independently, the per-word entropy i
 
 Everything runs in your browser. Generated values never leave your machine. You can confirm this by viewing the page source or watching the network tab in DevTools, no requests are made. The tool works offline with no external dependencies. For real accounts, store passwords in a password manager, never reuse them, and turn on two-factor authentication.
 
+## More
+
+Part of a catalog of single-file browser tools and plain-language references, all MIT licensed and dependency-free: [0xelitesystem.github.io](https://0xelitesystem.github.io/). Built by [elitesystem.ai](https://elitesystem.ai).
+
 ## License
 
 MIT. Copyright 0xelitesystem 2026.
