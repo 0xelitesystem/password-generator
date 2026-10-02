@@ -2,6 +2,8 @@
 
 Generate strong passwords and passphrases in your browser using the cryptographic random source (`crypto.getRandomValues`, never `Math.random`). See an entropy estimate in bits, a strength label, and copy any result with one click. No server, no tracking, no external dependencies.
 
+**Live demo:** https://0xelitesystem.github.io/password-generator/
+
 ## Live demo
 
 https://0xelitesystem.github.io/password-generator/
@@ -27,9 +29,33 @@ Entropy is the base-2 logarithm of the number of equally likely outcomes:
 
 Because the words are chosen uniformly and independently, the per-word entropy is honest at `log2(listSize)` bits. A larger word list would give more bits per word, this one is deliberately compact so it can be embedded inline.
 
+## Use
+
+1. Pick Password or Passphrase mode.
+2. Set the length and character toggles, or the word count, separator, and options.
+3. Choose how many to generate, then read the entropy estimate and strength label.
+4. Copy a single result or copy all.
+
+## Why this exists
+
+Online password generators ask you to trust a page you cannot inspect with the one secret you most need to keep. This is one HTML file that draws every character from `crypto.getRandomValues` in your browser, with no tracking and no network calls. MIT licensed, so you can read every line before you use it.
+
 ## Privacy
 
-Everything runs in your browser. Generated values never leave your machine. You can confirm this by viewing the page source or watching the network tab in DevTools, no requests are made. The tool works offline with no external dependencies. For real accounts, store passwords in a password manager, never reuse them, and turn on two-factor authentication.
+Everything runs in your browser. Generated values never leave your machine. You can confirm this by viewing the page source or watching the network tab in DevTools, no requests are made. The tool works offline with no external dependencies. For real accounts, store passwords in a password manager, never reuse them, and turn on two-factor authentication. Generated passwords are never stored. The only thing the page writes to your browser is your light or dark theme choice, saved in localStorage under the key `theme` when you press the theme button, so the page opens in the same theme next time. Clear site data to remove it.
+
+## Run locally
+
+```
+git clone https://github.com/0xelitesystem/password-generator
+cd password-generator
+```
+
+Then open `index.html` in any browser. Or serve the folder with `python -m http.server` and visit http://localhost:8000.
+
+## Build
+
+No build step. The whole tool is one file, `index.html`, with its CSS and JavaScript inline.
 
 ## More
 
